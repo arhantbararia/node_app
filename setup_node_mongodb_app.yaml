@@ -1,0 +1,15 @@
+- name: Setup Node.js with MongoDB on Remote Host
+  hosts: 43.205.191.103
+  remote_user: ec2-user
+  become: yes
+
+  tasks:
+    - name: Install required packages
+      yum:
+        name: ['nodejs', 'npm']
+        state: present
+
+    - name: Clone app repository
+      git:
+        repo: 
+
