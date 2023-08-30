@@ -11,5 +11,18 @@
 
     - name: Clone app repository
       git:
-        repo: 
+        repo: https://github.com/arhantbararia/node_app.git
+        dest: /home/ec2-user/nod_app
+
+    - name: Install app dependencies
+      command: npm install express mongodb
+      args:
+        chdir: /home/ec2-user/node_app
+
+    - name: Start the node app
+      command: node app.js
+      args:
+        chdir: /home/ec2-user/nod_app
+
+
 
